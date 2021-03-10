@@ -6,7 +6,7 @@ from azure.core.credentials import AzureKeyCredential
  
 key = ""
 endpoint = ""
-subscription_key = ""
+subscription_key = "" ## for news api
 search_term = "Deprem"
 search_url = "https://api.bing.microsoft.com/v7.0/news/search"
 headers = {"Ocp-Apim-Subscription-Key" : subscription_key}
@@ -31,6 +31,8 @@ def authenticate_client():
     return text_analytics_client
  
 client = authenticate_client() 
+
+
 def sentiment_analysis_example(client,documents):
  
     response = client.analyze_sentiment(documents=documents)[0]
